@@ -89,7 +89,8 @@ function mixinConfig (opts) {
 }
 
 const install = function (Vue, opts) {
-  Vue.component('Vueditor', mixinConfig(opts))
+  const Editor = Vue.extend(mixinConfig(opts))
+  Vue.component('Vueditor', new Editor())
 }
 
 const createEditor = function (el, opts) {
